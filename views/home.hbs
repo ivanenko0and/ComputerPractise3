@@ -1,0 +1,35 @@
+
+    
+<form action="">
+    <p>Enter email:</p>
+    <input id="textbox" type="text" pattern=".+@.+\..+">
+    <input id="b1" type="button" value="Confirm">
+    <p id="label"></p>
+</form>
+
+
+<script>
+    b1.addEventListener('click', write)
+
+
+    function write() {
+
+        if(textbox.validity.patternMismatch){
+            var text = document.getElementById('textbox');
+            text.style.border = "2px solid rgba(255, 0, 0)";
+
+            var label = document.getElementById('label');
+            label.innerHTML = "Wrong email!";
+
+        }else{
+            var text = document.getElementById('textbox');
+            text.style.border = "1px solid rgba(0, 0, 0)";
+
+            var label = document.getElementById('label');
+            label.innerHTML = "Succes!";
+        }
+
+    }
+
+
+</script>
